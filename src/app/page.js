@@ -7,12 +7,13 @@ import fetchPosts from "../../services";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
-
+  const [isLoading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchPosts();
       if (data) {
         setPosts(data.posts);
+        setLoading(false)
       }
     };
     fetchData();
@@ -23,7 +24,8 @@ export default function Home() {
   }
 
   */}
-
+  if (isLoading) return <p>Loading...</p>
+  if (!data) return <p>No profile data</p>
 
   return (
     <div className="container mx-auto px-10 mb-8">
