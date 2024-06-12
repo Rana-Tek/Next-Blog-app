@@ -5,6 +5,7 @@ dotenv.config();
 
 const fetchPosts = async() => {
   const endpoint = 'https://api-eu-west-2.hygraph.com/v2/clwss8lq4024707w6bi76p10y/master';
+  
 
 
     const query = `
