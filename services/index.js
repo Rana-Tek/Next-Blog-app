@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const fetchPosts = () => {
-  const endpoint = 'https://api-eu-west-2.hygraph.com/v2/clwss8lq4024707w6bi76p10y/master';
+  const endpoint = NEXT_PUBLIC_GRAPH_ENDPOINT;
 
 
     const query = `
-    query {
+    query MyQuery {
         postsConnection {
           edges {
             node {
@@ -40,7 +40,7 @@ try {
     query: query
   }, {
     headers:{
-       Authorization: `${process.env.NEXT_PUBLIC_GRAPH_ENDPOINT}`
+      'Authorization': ` Bearer ${process.env.AUTH_TOKEN }`,
     }
   });
   return response.data;
