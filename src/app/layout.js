@@ -15,23 +15,10 @@ export default function RootLayout({ children }) {
   return (
     
     <html>  
-    
-    
-    
-  
-   
-   
-
-  
-    <Layout>  
-  
-          
-          
-         
-   
-      <body className={inter.className}>{children}</body>
-      </Layout>
-      </html>
+    <body className={inter.className}>{children}
+    <Layout/>
+    </body>
+    </html>
 
  
 
