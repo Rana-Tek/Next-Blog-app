@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
-
+import { ApolloProvider } from "@apollo/client";
+import apolloClient from '@/lib/apolloClient';
 import {Layout} from '../components';
 import 'tailwindcss/tailwind.css';
 import "../styles/globals.scss";
@@ -18,11 +19,11 @@ export default function RootLayout({ children }) {
     <html>  
   
     
-   
+    <ApolloProvider client={ apolloClient }>
     <body className={inter.className}>{children}
     <Layout/>
     </body>
-    
+    </ApolloProvider>;
     </html>
 
  
